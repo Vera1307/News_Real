@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <title>Title</title>
+</head>
+    <body /*text = "DimGray"
+        background= "{{url_for('static', filename='sar.jpg')}}"*/>
+
+        <h1>  Добро пожаловать на страницу проверки новостей </h1>
+
+        <b><h2>Введите новости для проверки.</h2></b>><br />
+
+        <form method="post">
+            <textarea name="text" id="text" cols="50" rows="10"></textarea>
+            <input type="submit">
+            {%  if request.args.get("pred") %}
+            <h1>{{request.args.get("pred")}} </h1>
+            {% endif %}
+        </form>
+
+        <h2>Спасибо, что посетили наш сайт!</h2>
+
+    </body>
+</html>
